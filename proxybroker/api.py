@@ -96,7 +96,7 @@ class Broker:
         except NotImplementedError:
             pass
 
-    async def grab(self, *, countries=None, limit=0):
+    async def grab(self, *, countries=None, limit=0, types=None):
         """Gather proxies from the providers without checking.
 
         :param list countries: (optional) List of ISO country codes
@@ -107,7 +107,12 @@ class Broker:
         """
         self._countries = countries
         self._limit = limit
-        task = asyncio.ensure_future(self._grab(check=False))
+        types = _update_types(types)
+
+        if not types:
+            raise ValueError('`types` is required')
+
+        task = asyncio.ensure_future(self._grab(types, check=False))
         self._all_tasks.append(task)
 
     async def find(self, *, types=None, data=None, countries=None,
