@@ -29,13 +29,8 @@ class Resolver:
 
     _cached_hosts = {}
     _ip_hosts = [
-        'https://wtfismyip.com/text',
-        'http://api.ipify.org/',
-        'http://ipinfo.io/ip',
-        'http://ipv4.icanhazip.com/',
-        'http://myexternalip.com/raw',
-        'http://ipinfo.io/ip',
-        'http://ifconfig.io/ip',
+        'https://gextreme.com/ip?raw',
+        'https://3es.com/scripts/myip/?raw',
     ]
 
     def __init__(self, timeout=5, loop=None):

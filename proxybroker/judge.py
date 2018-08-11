@@ -102,9 +102,10 @@ class Judge:
 
 def get_judges(judges=None, timeout=8, verify_ssl=False):
     judges = judges or [
-        'http://httpbin.org/get?show_env', 'https://httpbin.org/get?show_env',
+        'http://httpbin.org/get?show_env',
         'smtp://smtp.gmail.com', 'smtp://aspmx.l.google.com',
         'http://azenv.net/', 'https://www.proxy-listen.de/azenv.php',
+        'http://proxyjudge.info/',
         'http://www.proxyfire.net/fastenv', 'http://proxyjudge.us/azenv.php',
         'http://ip.spys.ru/', 'http://www.proxy-listen.de/azenv.php']
     _judges = []
